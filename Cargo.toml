@@ -1,0 +1,43 @@
+[package]
+name = "clj"
+version = "0.1.0"
+edition = "2021"
+
+resolver = "2"
+
+publish = false
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# default-run = "a"
+
+[dependencies]
+regex = { git = "https://github.com/rust-lang/regex.git" }
+time = { version = "0.1.12", optional = true }
+serde = { version = "1.0.118", features = ["derive"] }
+flate2 = { version = "1.0.3", default-features = false, features = ["zlib"] }
+jpeg-decoder = { version = "0.1.20", default-features = false }
+
+[profile.release]
+panic = 'abort'
+
+# [lib]
+# # name = "foo-lib"
+# path = "src/lib.rs"
+# crate-type = ["lib"]
+
+[[example]]
+name = "ex"
+test = true
+# crate-type = ["staticlib"]
+
+[dev-dependencies]
+tempdir = "0.3"
+
+[target.'cfg(windows)'.dependencies]
+# winhttp = "0.4.0"
+
+[features]
+default = ["webp"]
+webp = []
+moment = ["time"]
+parall = ["jpeg-decoder/rayon"]

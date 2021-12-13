@@ -1,0 +1,25 @@
+(
+    field_name: 3.4
+    b: 'b'
+)
+
+(a: false)
+
+Vec(
+    x: 456.88
+    y: 219821
+)
+Empty()
+Unit
+()
+TupStruct(3, 4, false, "sadlkaslk")
+Some(true)
+None
+
+[1, 2, 3]
+
+{
+    "monk": "tettt",
+    'd': 878,
+    7575: 4343,
+}
